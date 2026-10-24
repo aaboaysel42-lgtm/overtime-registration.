@@ -1,0 +1,36 @@
+
+name: Extract Overtime Registration ZIP
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract project ZIP
+        run: |
+          ZIP_FILE=$(find . -maxdepth 1 -type f -iname "*.zip" | head -n 1)
+          if [ -z "$ZIP_FILE" ]; then
+            echo "No ZIP file found in repository root."
+            exit 1
+          fi
+          mkdir -p extracted_project
+          unzip -o "$ZIP_FILE" -d extracted_project
+          find extracted_project -type f
+
+      - name: Commit extracted files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp -a extracted_project/. .
+          rm -rf extracted_project
+          git add .
+          git commit -m "Extract overtime registration project ZIP" || echo "No changes to commit"
+          git push
