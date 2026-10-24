@@ -1,0 +1,17 @@
+{
+  "name": "نظام تسجيل السهر",
+  "short_name": "تسجيل السهر",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f3f8f5",
+  "theme_color": "#075638",
+  "icons": [
+    {
+      "src": "/resources/heidelberg-logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}
