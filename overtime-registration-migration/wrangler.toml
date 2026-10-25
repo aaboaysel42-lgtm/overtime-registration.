@@ -5,5 +5,5 @@ compatibility_date = "2026-10-24"
 [[d1_databases]]
 binding = "DB"
 database_name = "overtime-registration-db"
-database_id = "REPLACE_WITH_YOUR_CLOUDFLARE_D1_DATABASE_ID"
+database_id = "ab4defd1-fddb-4122-9579-1296a2ad9846"
 migrations_dir = "migrations"
