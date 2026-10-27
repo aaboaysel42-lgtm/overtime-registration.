@@ -4,6 +4,6 @@ compatibility_date = "2026-10-24"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "overtime-registration-db"
-database_id = "ab4defd1-fddb-4122-9579-1296a2ad9846"
+database_name = "overtime-registration-test-db"
+database_id = "405e8f93-15bb-48aa-8ff2-47765febb894"
 migrations_dir = "migrations"
